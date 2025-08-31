@@ -46,7 +46,11 @@ public class AceRace {
         Card aceToAdvance = null;
         int columnIndex = 0;
         int aceIndex = 0;
+        boolean found = false;
         for (int i = 0; i < this.allColumns.length; i++) {
+            if (found) {
+                break;
+            }
             columnIndex = i;
             aceIndex = 0;
             for (Card card : this.allColumns[i]) {
@@ -54,6 +58,7 @@ public class AceRace {
                     if (card.getSuit() == suit) {
                         System.out.println("Found!");
                         aceToAdvance = card;
+                        found = true;
                         break;
                     }
                 }

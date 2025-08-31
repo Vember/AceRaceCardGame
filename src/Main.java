@@ -11,6 +11,12 @@ public class Main {
         newRace.displayColumns();
         newRace.advanceAce(Card.Suit.c);
         newRace.displayColumns();
+        newRace.advanceAce(Card.Suit.d);
+        newRace.displayColumns();
+        newRace.advanceAce(Card.Suit.d);
+        newRace.displayColumns();
+        newRace.advanceAce(Card.Suit.s);
+        newRace.displayColumns();
 
     }
 
