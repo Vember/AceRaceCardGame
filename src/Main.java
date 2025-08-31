@@ -9,6 +9,8 @@ public class Main {
         AceRace newRace = new AceRace(deck);
         deck.shuffleDeck();
         newRace.displayColumns();
+        newRace.advanceAce(Card.Suit.c);
+        newRace.displayColumns();
 
     }
 
