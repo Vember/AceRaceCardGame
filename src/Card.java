@@ -33,11 +33,13 @@ public class Card {
 
     private final Suit suit;
     private final Rank rank;
+    private boolean isRevealed;
 
     public Card(Suit suit, Rank rank) {
 
         this.suit = suit;
         this.rank = rank;
+        this.isRevealed = false;
 
     }
 
@@ -47,6 +49,14 @@ public class Card {
 
     public Rank getRank() {
         return this.rank;
+    }
+
+    public void setIsRevealed(boolean state) {
+        this.isRevealed = state;
+    }
+
+    public boolean getIsRevealed() {
+        return this.isRevealed;
     }
 
     @Override
