@@ -96,13 +96,13 @@ public class AceRace {
     public void checkForMysteryActivation() {
 
         for (int i = 0; i < 5; i++) {
-            mysteryCardActivated((i + 2), i);
+            mysteryCardActivated((i + 1), i);
         }
     }
 
     public void mysteryCardActivated(int column, int cardActivated) {
 
-        if (getSmallestAceRow(this.allColumns) >= column && !this.mysteryCards.get(cardActivated).getIsRevealed()) {
+        if (getSmallestAceRow(this.allColumns) > column && !this.mysteryCards.get(cardActivated).getIsRevealed()) {
             this.mysteryCards.get(cardActivated).setIsRevealed(true);
             System.out.println(this.mysteryCards.get(cardActivated) + " was revealed! " + this.mysteryCards.get(cardActivated).getSuit().toString().toUpperCase() + " is retracted.");
             retractAce(this.mysteryCards.get(cardActivated).getSuit());
