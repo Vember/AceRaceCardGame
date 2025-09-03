@@ -40,7 +40,7 @@ public class AceRace {
     public void populateMysteryCards() {
 
         this.deck.shuffleDeck();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             this.mysteryCards.add(this.deck.removeTopCardFromDeck());
         }
     }
@@ -95,14 +95,14 @@ public class AceRace {
 
     public void checkForMysteryActivation() {
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             mysteryCardActivated((i + 2), i);
         }
     }
 
     public void mysteryCardActivated(int column, int cardActivated) {
 
-        if (getSmallestAceRow(this.allColumns) > column && !this.mysteryCards.get(cardActivated).getIsRevealed()) {
+        if (getSmallestAceRow(this.allColumns) >= column && !this.mysteryCards.get(cardActivated).getIsRevealed()) {
             this.mysteryCards.get(cardActivated).setIsRevealed(true);
             System.out.println(this.mysteryCards.get(cardActivated) + " was revealed! " + this.mysteryCards.get(cardActivated).getSuit().toString().toUpperCase() + " is retracted.");
             retractAce(this.mysteryCards.get(cardActivated).getSuit());
@@ -163,9 +163,9 @@ public class AceRace {
     public void displayColumns() {
 
         int columnNumber = 7;
-        int mysteryCard = 3;
+        int mysteryCard = 4;
         for (int i = 0; i < 7; i++) {
-            if (i == 0 || i == 6 || i == 1) {
+            if (i == 0 || i == 6) {
                 displayColumn(this.allColumns[i], columnNumber);
                 columnNumber--;
             } else {
